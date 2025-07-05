@@ -1,4 +1,4 @@
-package com.example.sample
+package com.goorm.maki
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

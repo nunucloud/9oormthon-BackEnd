@@ -1,4 +1,4 @@
-package com.example.sample
+package com.goorm.maki.sample
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
