@@ -39,6 +39,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-security")
     // Kotlin Reflection API
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    // SLF4J 로깅 (Spring Boot 기본 로깅 지원, 필요시 명시)
+    implementation("org.springframework.boot:spring-boot-starter-logging")
     // 개발 편의성용 핫 리로딩 도구
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     // 통합 테스트 스타터 (JUnit, Mockito 포함)
