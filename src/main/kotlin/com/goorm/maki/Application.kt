@@ -2,10 +2,12 @@ package com.goorm.maki
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 
 @SpringBootApplication
-class SampleApplication
+@EnableJpaRepositories(basePackages = ["com.goorm.maki"])
+class Application
 
 fun main(args: Array<String>) {
-    runApplication<SampleApplication>(*args)
+    runApplication<Application>(*args)
 }
