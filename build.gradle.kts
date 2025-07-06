@@ -24,7 +24,7 @@ dependencies {
     // Spring MVC 웹 스타터
     implementation("org.springframework.boot:spring-boot-starter-web")
     // Swagger UI 및 OpenAPI 문서 자동 생성용 라이브러리
-    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.7.0")
     // JDBC 데이터 연동 스타터
     implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
     // JPA (Hibernate) 기반 ORM 스타터
