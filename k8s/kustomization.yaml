@@ -3,6 +3,6 @@ resources:
   - ingress.yaml
 
 configMapGenerator:
-  - name: java-backend-config
+  - name: nollea-backend-config
     files:
       - config.json=config/backend-config.json
