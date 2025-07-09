@@ -17,6 +17,17 @@ spec:
           image: 837126493345.dkr.ecr.ap-northeast-2.amazonaws.com/team-4/backend:latest #fixme
           ports:
             - containerPort: 8080
+          env:
+            - name: API_KEY
+              valueFrom:
+                configMapKeyRef:
+                  name: nollea-backend-config
+                  key: OPENAPI_KEY
+            - name: OPENAPI_KEY
+              valueFrom:
+                configMapKeyRef:
+                  name: nollea-backend-config
+                  key: OPENAPI_KEY
           volumeMounts:
             - name: config-volume
               mountPath: /app/config
