@@ -28,14 +28,14 @@ spec:
                 configMapKeyRef:
                   name: team4-config
                   key: OPENAPI_KEY
-          volumeMounts:
-            - name: config-volume
-              mountPath: /app/config
-              readOnly: true
-      volumes:
-        - name: config-volume
-          configMap:
-            name: nollea-backend-config
+#          volumeMounts:
+#            - name: config-volume
+#              mountPath: /app/config
+#              readOnly: true
+#      volumes:
+#        - name: config-volume
+#          configMap:
+#            name: nollea-backend-config
 ---
 apiVersion: v1
 kind: Service
