@@ -13,18 +13,30 @@ spec:
         app: java-backend
     spec:
       containers:
-      - name: backend
-        image: 837126493345.dkr.ecr.ap-northeast-2.amazonaws.com/team4/backend:latest
-        ports:
-        - containerPort: 8080
-        volumeMounts:
-        - name: config-volume
-          mountPath: /app/config
-          readOnly: true
+        - name: backend
+          image: 837126493345.dkr.ecr.ap-northeast-2.amazonaws.com/team4/backend:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: API_KEY
+              valueFrom:
+                configMapKeyRef:
+                  name: team4-config
+                  key: OPENAPI_KEY
+            - name: OPENAPI_KEY
+              valueFrom:
+                configMapKeyRef:
+                  name: team4-config
+                  key: OPENAPI_KEY
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/config
+              readOnly: true
       volumes:
-      - name: config-volume
-        configMap:
-          name: java-backend-config
+        - name: config-volume
+          configMap:
+            name: java-backend-config
+
 ---
 apiVersion: v1
 kind: Service
