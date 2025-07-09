@@ -29,10 +29,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: java-backend
+  name: nollea-backend
 spec:
   selector:
-    app: java-backend
+    app: nollea-backend
   ports:
     - port: 80
       targetPort: 8080
