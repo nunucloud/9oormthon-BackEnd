@@ -1,33 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: java-backend
+  name: nollea-backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: java-backend
+      app: nollea-backend
   template:
     metadata:
       labels:
-        app: java-backend
+        app: nollea-backend
     spec:
       containers:
         - name: backend
-          image: 837126493345.dkr.ecr.ap-northeast-2.amazonaws.com/team4/backend:latest
+          image: 837126493345.dkr.ecr.ap-northeast-2.amazonaws.com/team-4/backend:latest #fixme
           ports:
             - containerPort: 8080
-          env:
-            - name: API_KEY
-              valueFrom:
-                configMapKeyRef:
-                  name: team4-config
-                  key: OPENAPI_KEY
-            - name: OPENAPI_KEY
-              valueFrom:
-                configMapKeyRef:
-                  name: team4-config
-                  key: OPENAPI_KEY
           volumeMounts:
             - name: config-volume
               mountPath: /app/config
@@ -35,8 +24,7 @@ spec:
       volumes:
         - name: config-volume
           configMap:
-            name: java-backend-config
-
+            name: nollea-backend-config
 ---
 apiVersion: v1
 kind: Service
@@ -46,5 +34,5 @@ spec:
   selector:
     app: java-backend
   ports:
-  - port: 80
-    targetPort: 8080
+    - port: 80
+      targetPort: 8080
